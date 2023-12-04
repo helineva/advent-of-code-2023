@@ -1,0 +1,39 @@
+""" Advent of Code 2023 (https://adventofcode.com/)
+    Day 4 Part 2 (faster solution). """
+
+
+def process_card(i, hits):
+    """Process a scratchcard"""
+    process_card.count += 1
+    for j in range(i + 1, min(len(hits), i + hits[i] + 1)):
+        process_card(j, hits)
+
+
+process_card.count = 0
+
+
+def solve_day4_part2():
+    """Solve the problem"""
+
+    hits = []
+
+    with open("input.txt", "r", encoding="utf-8") as f:
+        for line in f:
+            _, numbers = line.strip().split(":")
+            winning, candidates = numbers.split("|")
+            winning = winning.strip().split()
+            candidates = candidates.strip().split()
+            hit = 0
+            for c in candidates:
+                if c in winning:
+                    hit += 1
+            hits.append(hit)
+
+    for i in range(len(hits)):
+        process_card(i, hits)
+
+    print(process_card.count)
+
+
+if __name__ == "__main__":
+    solve_day4_part2()
