@@ -1,5 +1,5 @@
 """ Advent of Code 2023 (https://adventofcode.com/)
-    Day 8 Part 1. """
+    Day 8 Part 2. """
 from math import lcm
 
 
