@@ -62,7 +62,7 @@ def solve_day18_part2():
 
     # trench area created when travelling D or L is not included in
     # the previous area computation, we still need to add this
-    # (this is also possibly close to len(plan) // 2 ?)
+    # (this is also possibly close to sum(distance) // 2 ?)
     additional_area = 0
     prev_direction = plan[-1][0]
     for direction, distance in plan:
