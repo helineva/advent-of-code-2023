@@ -63,6 +63,15 @@ def solve_day18_part2():
     # trench area created when travelling D or L is not included in
     # the previous area computation, we still need to add this
     # (this is also possibly close to sum(distance) // 2 ?)
+    #
+    # added: the number is likely to be exactly 1 + sum(distance) / 2
+    # sum(distance) / 2 comes from the fact that the distance travelled
+    # up is equal to the distance travelled down, and similarly
+    # the distance travelled right is equal to the distance travelled left,
+    # since the curve is closed
+    # + 1 comes from the fact that there are exactly one more
+    # D-to-L transitions (adding one extra unit of area) than
+    # L-to-D transitions (subtracting one unit)
     additional_area = 0
     prev_direction = plan[-1][0]
     for direction, distance in plan:
