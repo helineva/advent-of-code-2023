@@ -39,7 +39,7 @@ def solve_day19_part2():
 
     # traverse the workflow tree with the root "in" and the leaves "A(ccepted)"
     # and "R(ejected)" keeping record of the min and max bounds for each category,
-    # at an "Accepted" leaf add the combinations allowed by the currect bounds,
+    # at an "Accepted" leaf add the number of combinations allowed by the current bounds,
     # this is simply the product of the length of the intervals given by the bounds,
     # the conditions are pairwise exclusive at the leaves so that the result is correct
 
