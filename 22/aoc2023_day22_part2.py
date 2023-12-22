@@ -67,7 +67,7 @@ def solve_day22_part2():
     number_of_falling_bricks = 0
 
     # for each brick, find which bricks would fall if that brick was taken away
-    # move upwards according to the info given by "supported_by"
+    # move upwards according to the info given by "supporting"
     # have to process the bricks in the order of increasing end face height
     # so something like a priority queue is needed
     # for example, using a normal queue
